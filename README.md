@@ -1,4 +1,4 @@
 HTMLEditor
 ==========
 
-Luke, Danielle, Isioma, Peter, Nicholas
+Luke and Danielle's GUI Work
