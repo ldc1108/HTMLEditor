@@ -185,6 +185,11 @@ public class testGUI extends javax.swing.JFrame {
 
         AutoWordWrapMenuCheckBox.setSelected(true);
         AutoWordWrapMenuCheckBox.setText("Auto Word Wrap");
+        AutoWordWrapMenuCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AutoWordWrapMenuCheckBoxActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(AutoWordWrapMenuCheckBox);
 
         AutoIndentMenuCheckBox.setSelected(true);
@@ -264,14 +269,6 @@ public class testGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveMenuItemActionPerformed
 
-     private void AutoWordWrapMenuCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-        if (AutoWordWrapMenuCheckBox.isSelected()){
-            jTextArea1.setLineWrap(true);
-        }
-        else{
-            jTextArea1.setLineWrap(false);
-        }
-    }  
     private void OpenMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpenMenuItemActionPerformed
@@ -311,6 +308,16 @@ public class testGUI extends javax.swing.JFrame {
     private void TableMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TableMenuItemActionPerformed
+
+    private void AutoWordWrapMenuCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoWordWrapMenuCheckBoxActionPerformed
+        // TODO add your handling code here:
+        if (AutoWordWrapMenuCheckBox.isSelected()){
+            jTextArea1.setLineWrap(true);
+        }
+        else{
+            jTextArea1.setLineWrap(false);
+        }
+    }//GEN-LAST:event_AutoWordWrapMenuCheckBoxActionPerformed
 
     
     
