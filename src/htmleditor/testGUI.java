@@ -37,39 +37,39 @@ public class testGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        FileMenu = new javax.swing.JMenu();
         newFileMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        Save = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        insertMenu = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenuItem21 = new javax.swing.JMenuItem();
-        jMenuItem22 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem18 = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
+        OpenMenuItem = new javax.swing.JMenuItem();
+        SaveMenuItem = new javax.swing.JMenuItem();
+        SaveAsMenuItem = new javax.swing.JMenuItem();
+        EditMenu = new javax.swing.JMenu();
+        CutMenuItem = new javax.swing.JMenuItem();
+        CopyMenuItem = new javax.swing.JMenuItem();
+        PasteMenuItem = new javax.swing.JMenuItem();
+        ViewMenu = new javax.swing.JMenu();
+        ViewAsWebpageMenuItem = new javax.swing.JMenuItem();
+        ZoomToMenu = new javax.swing.JMenu();
+        FiftyPercentZoom = new javax.swing.JMenuItem();
+        OneHundredPercentZoom = new javax.swing.JMenuItem();
+        TwoHundredPercentZoom = new javax.swing.JMenuItem();
+        OptionsMenu = new javax.swing.JMenu();
+        AutoWordWrapMenuCheckBox = new javax.swing.JCheckBoxMenuItem();
+        AutoIndentMenuCheckBox = new javax.swing.JCheckBoxMenuItem();
+        SyntaxHighlightingMenuCheckbox = new javax.swing.JCheckBoxMenuItem();
+        IndentCurrentLineMenuItem = new javax.swing.JMenuItem();
+        IndentSelectedTextMenuItem = new javax.swing.JMenuItem();
+        IndentEntireBufferMenuItem = new javax.swing.JMenuItem();
+        InsertMenu = new javax.swing.JMenu();
+        HeaderMenuItem = new javax.swing.JMenuItem();
+        TableMenuItem = new javax.swing.JMenuItem();
+        ListMenuItem = new javax.swing.JMenuItem();
+        FontEmphasisMenu = new javax.swing.JMenu();
+        BoldMenuItem = new javax.swing.JMenuItem();
+        ItalicMenuItem = new javax.swing.JMenuItem();
+        UnderlineMenuItem = new javax.swing.JMenuItem();
+        FooterMenuItem = new javax.swing.JMenuItem();
+        ParagraphMenuItem = new javax.swing.JMenuItem();
+        PictureMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,7 +104,7 @@ public class testGUI extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
-        jMenu1.setText("File");
+        FileMenu.setText("File");
 
         newFileMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-document-new-icon.png"))); // NOI18N
         newFileMenuItem.setText("New");
@@ -113,160 +113,168 @@ public class testGUI extends javax.swing.JFrame {
                 newFileMenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(newFileMenuItem);
+        FileMenu.add(newFileMenuItem);
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Folder-Open-icon.png"))); // NOI18N
-        jMenuItem1.setText("Open");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        OpenMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Folder-Open-icon.png"))); // NOI18N
+        OpenMenuItem.setText("Open");
+        OpenMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                OpenMenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        FileMenu.add(OpenMenuItem);
 
-        Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save-icon.png"))); // NOI18N
-        Save.setText("Save");
-        Save.addActionListener(new java.awt.event.ActionListener() {
+        SaveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save-icon.png"))); // NOI18N
+        SaveMenuItem.setText("Save");
+        SaveMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveActionPerformed(evt);
+                SaveMenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(Save);
+        FileMenu.add(SaveMenuItem);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save-as-icon.png"))); // NOI18N
-        jMenuItem2.setText("Save As");
-        jMenu1.add(jMenuItem2);
+        SaveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save-as-icon.png"))); // NOI18N
+        SaveAsMenuItem.setText("Save As");
+        FileMenu.add(SaveAsMenuItem);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(FileMenu);
 
-        jMenu2.setText("Edit");
+        EditMenu.setText("Edit");
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-cut-icon.png"))); // NOI18N
-        jMenuItem3.setText("Cut");
-        jMenu2.add(jMenuItem3);
+        CutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-cut-icon.png"))); // NOI18N
+        CutMenuItem.setText("Cut");
+        EditMenu.add(CutMenuItem);
 
-        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-copy-icon.png"))); // NOI18N
-        jMenuItem11.setText("Copy");
-        jMenu2.add(jMenuItem11);
+        CopyMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-copy-icon.png"))); // NOI18N
+        CopyMenuItem.setText("Copy");
+        EditMenu.add(CopyMenuItem);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paste-icon.png"))); // NOI18N
-        jMenuItem4.setText("Paste");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        PasteMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paste-icon.png"))); // NOI18N
+        PasteMenuItem.setText("Paste");
+        PasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                PasteMenuItemActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        EditMenu.add(PasteMenuItem);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(EditMenu);
 
-        jMenu6.setText("View");
+        ViewMenu.setText("View");
 
-        jMenuItem5.setText("View As Webpage");
-        jMenu6.add(jMenuItem5);
+        ViewAsWebpageMenuItem.setText("View As Webpage");
+        ViewMenu.add(ViewAsWebpageMenuItem);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Zoom-In-icon.png"))); // NOI18N
-        jMenu5.setText("Zoom To..");
+        ZoomToMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Zoom-In-icon.png"))); // NOI18N
+        ZoomToMenu.setText("Zoom To..");
 
-        jMenuItem12.setText("50%");
-        jMenu5.add(jMenuItem12);
+        FiftyPercentZoom.setText("50%");
+        ZoomToMenu.add(FiftyPercentZoom);
 
-        jMenuItem13.setText("100%");
-        jMenu5.add(jMenuItem13);
+        OneHundredPercentZoom.setText("100%");
+        ZoomToMenu.add(OneHundredPercentZoom);
 
-        jMenuItem14.setText("200%");
-        jMenu5.add(jMenuItem14);
+        TwoHundredPercentZoom.setText("200%");
+        ZoomToMenu.add(TwoHundredPercentZoom);
 
-        jMenu6.add(jMenu5);
+        ViewMenu.add(ZoomToMenu);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(ViewMenu);
 
-        jMenu7.setText("Options");
+        OptionsMenu.setText("Options");
 
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Auto Word Wrap");
-        jMenu7.add(jCheckBoxMenuItem1);
+        AutoWordWrapMenuCheckBox.setSelected(true);
+        AutoWordWrapMenuCheckBox.setText("Auto Word Wrap");
+        OptionsMenu.add(AutoWordWrapMenuCheckBox);
 
-        jCheckBoxMenuItem2.setSelected(true);
-        jCheckBoxMenuItem2.setText("Auto Indent");
-        jMenu7.add(jCheckBoxMenuItem2);
+        AutoIndentMenuCheckBox.setSelected(true);
+        AutoIndentMenuCheckBox.setText("Auto Indent");
+        OptionsMenu.add(AutoIndentMenuCheckBox);
 
-        jCheckBoxMenuItem3.setSelected(true);
-        jCheckBoxMenuItem3.setText("Syntax Highlighting");
-        jMenu7.add(jCheckBoxMenuItem3);
+        SyntaxHighlightingMenuCheckbox.setSelected(true);
+        SyntaxHighlightingMenuCheckbox.setText("Syntax Highlighting");
+        OptionsMenu.add(SyntaxHighlightingMenuCheckbox);
 
-        jMenuItem6.setText("Indent Current Line");
-        jMenu7.add(jMenuItem6);
+        IndentCurrentLineMenuItem.setText("Indent Current Line");
+        OptionsMenu.add(IndentCurrentLineMenuItem);
 
-        jMenuItem7.setText("Indent Selected Text");
-        jMenu7.add(jMenuItem7);
+        IndentSelectedTextMenuItem.setText("Indent Selected Text");
+        OptionsMenu.add(IndentSelectedTextMenuItem);
 
-        jMenuItem9.setText("Indent Entire Buffer");
-        jMenu7.add(jMenuItem9);
+        IndentEntireBufferMenuItem.setText("Indent Entire Buffer");
+        OptionsMenu.add(IndentEntireBufferMenuItem);
 
-        jMenuBar1.add(jMenu7);
+        jMenuBar1.add(OptionsMenu);
 
-        insertMenu.setText("Insert");
+        InsertMenu.setText("Insert");
 
-        jMenuItem8.setText("Header");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        HeaderMenuItem.setText("Header");
+        HeaderMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                HeaderMenuItemActionPerformed(evt);
             }
         });
-        insertMenu.add(jMenuItem8);
+        InsertMenu.add(HeaderMenuItem);
 
-        jMenuItem10.setText("Table");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        TableMenuItem.setText("Table");
+        TableMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                TableMenuItemActionPerformed(evt);
             }
         });
-        insertMenu.add(jMenuItem10);
+        InsertMenu.add(TableMenuItem);
 
-        jMenuItem15.setText("List");
-        insertMenu.add(jMenuItem15);
+        ListMenuItem.setText("List");
+        InsertMenu.add(ListMenuItem);
 
-        jMenu3.setText("Font Emphasis");
+        FontEmphasisMenu.setText("Font Emphasis");
 
-        jMenuItem20.setText("Bold");
-        jMenu3.add(jMenuItem20);
+        BoldMenuItem.setText("Bold");
+        FontEmphasisMenu.add(BoldMenuItem);
 
-        jMenuItem21.setText("Italic");
-        jMenu3.add(jMenuItem21);
+        ItalicMenuItem.setText("Italic");
+        FontEmphasisMenu.add(ItalicMenuItem);
 
-        jMenuItem22.setText("Underline");
-        jMenu3.add(jMenuItem22);
+        UnderlineMenuItem.setText("Underline");
+        FontEmphasisMenu.add(UnderlineMenuItem);
 
-        insertMenu.add(jMenu3);
+        InsertMenu.add(FontEmphasisMenu);
 
-        jMenuItem17.setText("Footer");
-        insertMenu.add(jMenuItem17);
+        FooterMenuItem.setText("Footer");
+        InsertMenu.add(FooterMenuItem);
 
-        jMenuItem18.setText("Paragraph");
-        insertMenu.add(jMenuItem18);
+        ParagraphMenuItem.setText("Paragraph");
+        InsertMenu.add(ParagraphMenuItem);
 
-        jMenuItem19.setText("Picture");
-        insertMenu.add(jMenuItem19);
+        PictureMenuItem.setText("Picture");
+        InsertMenu.add(PictureMenuItem);
 
-        jMenuBar1.add(insertMenu);
+        jMenuBar1.add(InsertMenu);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void PasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasteMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_PasteMenuItemActionPerformed
 
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+    private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SaveActionPerformed
+    }//GEN-LAST:event_SaveMenuItemActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+     private void AutoWordWrapMenuCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        if (AutoWordWrapMenuCheckBox.isSelected()){
+            jTextArea1.setLineWrap(true);
+        }
+        else{
+            jTextArea1.setLineWrap(false);
+        }
+    }  
+    private void OpenMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_OpenMenuItemActionPerformed
 
     private void newFileMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileMenuItemActionPerformed
         // TODO add your handling code here:
@@ -296,13 +304,13 @@ public class testGUI extends javax.swing.JFrame {
                
     }//GEN-LAST:event_tabsComponentAdded
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void HeaderMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeaderMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_HeaderMenuItemActionPerformed
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    private void TableMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    }//GEN-LAST:event_TableMenuItemActionPerformed
 
     
     
@@ -341,39 +349,39 @@ public class testGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Save;
-    private javax.swing.JMenu insertMenu;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
+    private javax.swing.JCheckBoxMenuItem AutoIndentMenuCheckBox;
+    private javax.swing.JCheckBoxMenuItem AutoWordWrapMenuCheckBox;
+    private javax.swing.JMenuItem BoldMenuItem;
+    private javax.swing.JMenuItem CopyMenuItem;
+    private javax.swing.JMenuItem CutMenuItem;
+    private javax.swing.JMenu EditMenu;
+    private javax.swing.JMenuItem FiftyPercentZoom;
+    private javax.swing.JMenu FileMenu;
+    private javax.swing.JMenu FontEmphasisMenu;
+    private javax.swing.JMenuItem FooterMenuItem;
+    private javax.swing.JMenuItem HeaderMenuItem;
+    private javax.swing.JMenuItem IndentCurrentLineMenuItem;
+    private javax.swing.JMenuItem IndentEntireBufferMenuItem;
+    private javax.swing.JMenuItem IndentSelectedTextMenuItem;
+    private javax.swing.JMenu InsertMenu;
+    private javax.swing.JMenuItem ItalicMenuItem;
+    private javax.swing.JMenuItem ListMenuItem;
+    private javax.swing.JMenuItem OneHundredPercentZoom;
+    private javax.swing.JMenuItem OpenMenuItem;
+    private javax.swing.JMenu OptionsMenu;
+    private javax.swing.JMenuItem ParagraphMenuItem;
+    private javax.swing.JMenuItem PasteMenuItem;
+    private javax.swing.JMenuItem PictureMenuItem;
+    private javax.swing.JMenuItem SaveAsMenuItem;
+    private javax.swing.JMenuItem SaveMenuItem;
+    private javax.swing.JCheckBoxMenuItem SyntaxHighlightingMenuCheckbox;
+    private javax.swing.JMenuItem TableMenuItem;
+    private javax.swing.JMenuItem TwoHundredPercentZoom;
+    private javax.swing.JMenuItem UnderlineMenuItem;
+    private javax.swing.JMenuItem ViewAsWebpageMenuItem;
+    private javax.swing.JMenu ViewMenu;
+    private javax.swing.JMenu ZoomToMenu;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
