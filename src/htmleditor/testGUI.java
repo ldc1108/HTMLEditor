@@ -145,6 +145,11 @@ public class testGUI extends javax.swing.JFrame {
 
         SaveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Save-as-icon.png"))); // NOI18N
         SaveAsMenuItem.setText("Save As");
+        SaveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveAsMenuItemActionPerformed(evt);
+            }
+        });
         FileMenu.add(SaveAsMenuItem);
 
         jMenuBar1.add(FileMenu);
@@ -186,18 +191,38 @@ public class testGUI extends javax.swing.JFrame {
         ViewMenu.setText("View");
 
         ViewAsWebpageMenuItem.setText("View As Webpage");
+        ViewAsWebpageMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewAsWebpageMenuItemActionPerformed(evt);
+            }
+        });
         ViewMenu.add(ViewAsWebpageMenuItem);
 
         ZoomToMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Zoom-In-icon.png"))); // NOI18N
         ZoomToMenu.setText("Zoom To..");
 
         FiftyPercentZoom.setText("50%");
+        FiftyPercentZoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FiftyPercentZoomActionPerformed(evt);
+            }
+        });
         ZoomToMenu.add(FiftyPercentZoom);
 
         OneHundredPercentZoom.setText("100%");
+        OneHundredPercentZoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OneHundredPercentZoomActionPerformed(evt);
+            }
+        });
         ZoomToMenu.add(OneHundredPercentZoom);
 
         TwoHundredPercentZoom.setText("200%");
+        TwoHundredPercentZoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TwoHundredPercentZoomActionPerformed(evt);
+            }
+        });
         ZoomToMenu.add(TwoHundredPercentZoom);
 
         ViewMenu.add(ZoomToMenu);
@@ -217,19 +242,44 @@ public class testGUI extends javax.swing.JFrame {
 
         AutoIndentMenuCheckBox.setSelected(true);
         AutoIndentMenuCheckBox.setText("Auto Indent");
+        AutoIndentMenuCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AutoIndentMenuCheckBoxActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(AutoIndentMenuCheckBox);
 
         SyntaxHighlightingMenuCheckbox.setSelected(true);
         SyntaxHighlightingMenuCheckbox.setText("Syntax Highlighting");
+        SyntaxHighlightingMenuCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SyntaxHighlightingMenuCheckboxActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(SyntaxHighlightingMenuCheckbox);
 
         IndentCurrentLineMenuItem.setText("Indent Current Line");
+        IndentCurrentLineMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IndentCurrentLineMenuItemActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(IndentCurrentLineMenuItem);
 
         IndentSelectedTextMenuItem.setText("Indent Selected Text");
+        IndentSelectedTextMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IndentSelectedTextMenuItemActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(IndentSelectedTextMenuItem);
 
         IndentEntireBufferMenuItem.setText("Indent Entire Buffer");
+        IndentEntireBufferMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IndentEntireBufferMenuItemActionPerformed(evt);
+            }
+        });
         OptionsMenu.add(IndentEntireBufferMenuItem);
 
         jMenuBar1.add(OptionsMenu);
@@ -253,28 +303,63 @@ public class testGUI extends javax.swing.JFrame {
         InsertMenu.add(TableMenuItem);
 
         ListMenuItem.setText("List");
+        ListMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListMenuItemActionPerformed(evt);
+            }
+        });
         InsertMenu.add(ListMenuItem);
 
         FontEmphasisMenu.setText("Font Emphasis");
 
         BoldMenuItem.setText("Bold");
+        BoldMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoldMenuItemActionPerformed(evt);
+            }
+        });
         FontEmphasisMenu.add(BoldMenuItem);
 
         ItalicMenuItem.setText("Italic");
+        ItalicMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItalicMenuItemActionPerformed(evt);
+            }
+        });
         FontEmphasisMenu.add(ItalicMenuItem);
 
         UnderlineMenuItem.setText("Underline");
+        UnderlineMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UnderlineMenuItemActionPerformed(evt);
+            }
+        });
         FontEmphasisMenu.add(UnderlineMenuItem);
 
         InsertMenu.add(FontEmphasisMenu);
 
         FooterMenuItem.setText("Footer");
+        FooterMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FooterMenuItemActionPerformed(evt);
+            }
+        });
         InsertMenu.add(FooterMenuItem);
 
         ParagraphMenuItem.setText("Paragraph");
+        ParagraphMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParagraphMenuItemActionPerformed(evt);
+            }
+        });
         InsertMenu.add(ParagraphMenuItem);
 
         PictureMenuItem.setText("Picture");
+        PictureMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PictureMenuItemActionPerformed(evt);
+            }
+        });
         InsertMenu.add(PictureMenuItem);
 
         jMenuBar1.add(InsertMenu);
@@ -368,6 +453,74 @@ public class testGUI extends javax.swing.JFrame {
         jTextArea1.replaceRange("", start, end);   
        // jTextArea1.setText(jTextArea1.getText().replace(jTextArea1.getSelectedText(),""));
     }//GEN-LAST:event_CutMenuItemActionPerformed
+
+    private void SaveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveAsMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveAsMenuItemActionPerformed
+
+    private void ViewAsWebpageMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewAsWebpageMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ViewAsWebpageMenuItemActionPerformed
+
+    private void FiftyPercentZoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FiftyPercentZoomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiftyPercentZoomActionPerformed
+
+    private void OneHundredPercentZoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OneHundredPercentZoomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OneHundredPercentZoomActionPerformed
+
+    private void TwoHundredPercentZoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TwoHundredPercentZoomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TwoHundredPercentZoomActionPerformed
+
+    private void AutoIndentMenuCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoIndentMenuCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AutoIndentMenuCheckBoxActionPerformed
+
+    private void SyntaxHighlightingMenuCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SyntaxHighlightingMenuCheckboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SyntaxHighlightingMenuCheckboxActionPerformed
+
+    private void IndentCurrentLineMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndentCurrentLineMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IndentCurrentLineMenuItemActionPerformed
+
+    private void IndentSelectedTextMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndentSelectedTextMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IndentSelectedTextMenuItemActionPerformed
+
+    private void IndentEntireBufferMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndentEntireBufferMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IndentEntireBufferMenuItemActionPerformed
+
+    private void ListMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListMenuItemActionPerformed
+
+    private void BoldMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoldMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoldMenuItemActionPerformed
+
+    private void ItalicMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItalicMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ItalicMenuItemActionPerformed
+
+    private void UnderlineMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnderlineMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UnderlineMenuItemActionPerformed
+
+    private void FooterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FooterMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FooterMenuItemActionPerformed
+
+    private void ParagraphMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParagraphMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ParagraphMenuItemActionPerformed
+
+    private void PictureMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PictureMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PictureMenuItemActionPerformed
     /**
      * @param args the command line arguments
      */
