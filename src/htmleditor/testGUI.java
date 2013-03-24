@@ -151,6 +151,7 @@ public class testGUI extends javax.swing.JFrame {
 
         EditMenu.setText("Edit");
 
+        CutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         CutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-cut-icon.png"))); // NOI18N
         CutMenuItem.setText("Cut");
         CutMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +161,7 @@ public class testGUI extends javax.swing.JFrame {
         });
         EditMenu.add(CutMenuItem);
 
+        CopyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         CopyMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-copy-icon.png"))); // NOI18N
         CopyMenuItem.setText("Copy");
         CopyMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +171,7 @@ public class testGUI extends javax.swing.JFrame {
         });
         EditMenu.add(CopyMenuItem);
 
+        PasteMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         PasteMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paste-icon.png"))); // NOI18N
         PasteMenuItem.setText("Paste");
         PasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
