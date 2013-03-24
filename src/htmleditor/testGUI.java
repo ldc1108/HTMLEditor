@@ -360,7 +360,10 @@ public class testGUI extends javax.swing.JFrame {
 
     private void CutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CutMenuItemActionPerformed
         selectedText = jTextArea1.getSelectedText();
-        jTextArea1.setText(jTextArea1.getText().replace(jTextArea1.getSelectedText(),""));
+        int start = jTextArea1.getSelectionStart();
+        int end = jTextArea1.getSelectionEnd();
+        jTextArea1.replaceRange("", start, end);   
+       // jTextArea1.setText(jTextArea1.getText().replace(jTextArea1.getSelectedText(),""));
     }//GEN-LAST:event_CutMenuItemActionPerformed
     /**
      * @param args the command line arguments
