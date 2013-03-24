@@ -20,4 +20,7 @@ public class Buffer extends Observable{
         this.contents = contents;
     }
     
+    public void updateContents(String s){
+        contents = s;
+    }
 }

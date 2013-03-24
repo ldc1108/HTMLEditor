@@ -20,6 +20,7 @@ public class testGUI extends javax.swing.JFrame {
      * Creates new form testGUI
      */
     public testGUI() {
+        this.currBuff = new Buffer(currentTab,"");
         initComponents();
     }
 
@@ -73,9 +74,18 @@ public class testGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tabs.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tabs.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                tabsStateChanged(evt);
+            }
+        });
         tabs.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 tabsComponentAdded(evt);
+            }
+            public void componentRemoved(java.awt.event.ContainerEvent evt) {
+                tabsComponentRemoved(evt);
             }
         });
 
@@ -143,10 +153,20 @@ public class testGUI extends javax.swing.JFrame {
 
         CutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-cut-icon.png"))); // NOI18N
         CutMenuItem.setText("Cut");
+        CutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CutMenuItemActionPerformed(evt);
+            }
+        });
         EditMenu.add(CutMenuItem);
 
         CopyMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Actions-edit-copy-icon.png"))); // NOI18N
         CopyMenuItem.setText("Copy");
+        CopyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CopyMenuItemActionPerformed(evt);
+            }
+        });
         EditMenu.add(CopyMenuItem);
 
         PasteMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paste-icon.png"))); // NOI18N
@@ -261,12 +281,17 @@ public class testGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private Buffer currBuff;
+    private int currentTab;
+    private String selectedText;
+    
     private void PasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasteMenuItemActionPerformed
-        // TODO add your handling code here:
+        jTextArea1.insert(selectedText, jTextArea1.getCaretPosition());
     }//GEN-LAST:event_PasteMenuItemActionPerformed
 
     private void SaveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveMenuItemActionPerformed
-        // TODO add your handling code here:
+        currBuff.updateContents(jTextArea1.getText());
+        //have Buffer notify editor that it's contents have changed
     }//GEN-LAST:event_SaveMenuItemActionPerformed
 
     private void OpenMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenMenuItemActionPerformed
@@ -296,9 +321,10 @@ public class testGUI extends javax.swing.JFrame {
 
     private void tabsComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_tabsComponentAdded
         //executes whenever a new tab is created
-        Buffer currBuff = new Buffer(buffers.size()+1, "");
-        buffers.add(currBuff);
-               
+        Buffer tabBuff = new Buffer(buffers.size()+1, "");
+        buffers.add(tabBuff);
+        currentTab = tabs.getSelectedIndex();
+ 
     }//GEN-LAST:event_tabsComponentAdded
 
     private void HeaderMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeaderMenuItemActionPerformed
@@ -319,8 +345,23 @@ public class testGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AutoWordWrapMenuCheckBoxActionPerformed
 
-    
-    
+    private void tabsComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_tabsComponentRemoved
+       //TODO: save stuff to buffer
+       //have buffer pass it's stuff to the editor      
+    }//GEN-LAST:event_tabsComponentRemoved
+
+    private void tabsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabsStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabsStateChanged
+
+    private void CopyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CopyMenuItemActionPerformed
+        selectedText = jTextArea1.getSelectedText();
+    }//GEN-LAST:event_CopyMenuItemActionPerformed
+
+    private void CutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CutMenuItemActionPerformed
+        selectedText = jTextArea1.getSelectedText();
+        jTextArea1.setText(jTextArea1.getText().replace(jTextArea1.getSelectedText(),""));
+    }//GEN-LAST:event_CutMenuItemActionPerformed
     /**
      * @param args the command line arguments
      */
