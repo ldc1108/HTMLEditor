@@ -216,14 +216,61 @@
             <Property name="text" type="java.lang.String" value="Insert"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="HeaderMenuItem">
+            <Menu class="javax.swing.JMenu" name="jMenu1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Header"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HeaderMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="h1Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h1&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h1HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="h2Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h2&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h2HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="h3Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h3&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h3HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="h4Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h4&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h4HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="h5Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h5&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h5HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="h6Header">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&lt;h6&gt;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h6HeaderActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="TableMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Table"/>
@@ -271,14 +318,6 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <MenuItem class="javax.swing.JMenuItem" name="FooterMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Footer"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FooterMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ParagraphMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Paragraph"/>

@@ -61,14 +61,19 @@ public class testGUI extends javax.swing.JFrame {
         IndentSelectedTextMenuItem = new javax.swing.JMenuItem();
         IndentEntireBufferMenuItem = new javax.swing.JMenuItem();
         InsertMenu = new javax.swing.JMenu();
-        HeaderMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        h1Header = new javax.swing.JMenuItem();
+        h2Header = new javax.swing.JMenuItem();
+        h3Header = new javax.swing.JMenuItem();
+        h4Header = new javax.swing.JMenuItem();
+        h5Header = new javax.swing.JMenuItem();
+        h6Header = new javax.swing.JMenuItem();
         TableMenuItem = new javax.swing.JMenuItem();
         ListMenuItem = new javax.swing.JMenuItem();
         FontEmphasisMenu = new javax.swing.JMenu();
         BoldMenuItem = new javax.swing.JMenuItem();
         ItalicMenuItem = new javax.swing.JMenuItem();
         UnderlineMenuItem = new javax.swing.JMenuItem();
-        FooterMenuItem = new javax.swing.JMenuItem();
         ParagraphMenuItem = new javax.swing.JMenuItem();
         PictureMenuItem = new javax.swing.JMenuItem();
 
@@ -292,13 +297,57 @@ public class testGUI extends javax.swing.JFrame {
 
         InsertMenu.setText("Insert");
 
-        HeaderMenuItem.setText("Header");
-        HeaderMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        jMenu1.setText("Header");
+
+        h1Header.setText("<h1>");
+        h1Header.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HeaderMenuItemActionPerformed(evt);
+                h1HeaderActionPerformed(evt);
             }
         });
-        InsertMenu.add(HeaderMenuItem);
+        jMenu1.add(h1Header);
+
+        h2Header.setText("<h2>");
+        h2Header.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h2HeaderActionPerformed(evt);
+            }
+        });
+        jMenu1.add(h2Header);
+
+        h3Header.setText("<h3>");
+        h3Header.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h3HeaderActionPerformed(evt);
+            }
+        });
+        jMenu1.add(h3Header);
+
+        h4Header.setText("<h4>");
+        h4Header.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h4HeaderActionPerformed(evt);
+            }
+        });
+        jMenu1.add(h4Header);
+
+        h5Header.setText("<h5>");
+        h5Header.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h5HeaderActionPerformed(evt);
+            }
+        });
+        jMenu1.add(h5Header);
+
+        h6Header.setText("<h6>");
+        h6Header.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                h6HeaderActionPerformed(evt);
+            }
+        });
+        jMenu1.add(h6Header);
+
+        InsertMenu.add(jMenu1);
 
         TableMenuItem.setText("Table");
         TableMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -343,14 +392,6 @@ public class testGUI extends javax.swing.JFrame {
         FontEmphasisMenu.add(UnderlineMenuItem);
 
         InsertMenu.add(FontEmphasisMenu);
-
-        FooterMenuItem.setText("Footer");
-        FooterMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FooterMenuItemActionPerformed(evt);
-            }
-        });
-        InsertMenu.add(FooterMenuItem);
 
         ParagraphMenuItem.setText("Paragraph");
         ParagraphMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -421,10 +462,6 @@ public class testGUI extends javax.swing.JFrame {
         buffers.add(tabBuff);
         currentTab = tabs.getSelectedIndex();
     }//GEN-LAST:event_tabsComponentAdded
-
-    private void HeaderMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeaderMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HeaderMenuItemActionPerformed
 
     private void TableMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableMenuItemActionPerformed
         // TODO add your handling code here:
@@ -523,12 +560,9 @@ public class testGUI extends javax.swing.JFrame {
         jTextArea1.insert("<u>\n     \n</u>", jTextArea1.getCaretPosition());
     }//GEN-LAST:event_UnderlineMenuItemActionPerformed
 
-    private void FooterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FooterMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FooterMenuItemActionPerformed
-
     private void ParagraphMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParagraphMenuItemActionPerformed
-        // TODO add your handling code here:
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<p>\n     \n</p>", jTextArea1.getCaretPosition());
     }//GEN-LAST:event_ParagraphMenuItemActionPerformed
 
     private void PictureMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PictureMenuItemActionPerformed
@@ -538,6 +572,36 @@ public class testGUI extends javax.swing.JFrame {
     private void tabsFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tabsFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_tabsFocusGained
+
+    private void h3HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h3HeaderActionPerformed
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h3>\n     \n</h3>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h3HeaderActionPerformed
+
+    private void h1HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h1HeaderActionPerformed
+       // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h1>\n     \n</h1>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h1HeaderActionPerformed
+
+    private void h2HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h2HeaderActionPerformed
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h2>\n     \n</h2>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h2HeaderActionPerformed
+
+    private void h4HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h4HeaderActionPerformed
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h4>\n     \n</h4>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h4HeaderActionPerformed
+
+    private void h5HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h5HeaderActionPerformed
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h5>\n     \n</h5>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h5HeaderActionPerformed
+
+    private void h6HeaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_h6HeaderActionPerformed
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<h6>\n     \n</h6>", jTextArea1.getCaretPosition());
+    }//GEN-LAST:event_h6HeaderActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -577,8 +641,6 @@ public class testGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem FiftyPercentZoom;
     private javax.swing.JMenu FileMenu;
     private javax.swing.JMenu FontEmphasisMenu;
-    private javax.swing.JMenuItem FooterMenuItem;
-    private javax.swing.JMenuItem HeaderMenuItem;
     private javax.swing.JMenuItem IndentCurrentLineMenuItem;
     private javax.swing.JMenuItem IndentEntireBufferMenuItem;
     private javax.swing.JMenuItem IndentSelectedTextMenuItem;
@@ -600,6 +662,13 @@ public class testGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem ViewAsWebpageMenuItem;
     private javax.swing.JMenu ViewMenu;
     private javax.swing.JMenu ZoomToMenu;
+    private javax.swing.JMenuItem h1Header;
+    private javax.swing.JMenuItem h2Header;
+    private javax.swing.JMenuItem h3Header;
+    private javax.swing.JMenuItem h4Header;
+    private javax.swing.JMenuItem h5Header;
+    private javax.swing.JMenuItem h6Header;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
