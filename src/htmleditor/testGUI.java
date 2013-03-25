@@ -514,11 +514,13 @@ public class testGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_BoldMenuItemActionPerformed
 
     private void ItalicMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItalicMenuItemActionPerformed
-        // TODO add your handling code here:
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<i>\n     \n</i>", jTextArea1.getCaretPosition());
     }//GEN-LAST:event_ItalicMenuItemActionPerformed
 
     private void UnderlineMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnderlineMenuItemActionPerformed
-        // TODO add your handling code here:
+        // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<u>\n     \n</u>", jTextArea1.getCaretPosition());
     }//GEN-LAST:event_UnderlineMenuItemActionPerformed
 
     private void FooterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FooterMenuItemActionPerformed
