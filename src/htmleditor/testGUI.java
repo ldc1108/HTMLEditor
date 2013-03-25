@@ -88,6 +88,11 @@ public class testGUI extends javax.swing.JFrame {
                 tabsComponentRemoved(evt);
             }
         });
+        tabs.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tabsFocusGained(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -372,6 +377,7 @@ public class testGUI extends javax.swing.JFrame {
 
     private Buffer currBuff;
     private int currentTab;
+    private JTextArea currentTextArea;
     private String selectedText;
     
     private void PasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasteMenuItemActionPerformed
@@ -393,11 +399,12 @@ public class testGUI extends javax.swing.JFrame {
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(textArea);
         tabs.add("New Buffer", scrollPane);
+        currentTextArea = textArea;
     }//GEN-LAST:event_newFileMenuItemActionPerformed
 
     private void jTextArea1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyTyped
         // TODO add your handling code here:
-        
+       //currentTextArea = this area
         // get the observable buffer
         //  update(string) on the bufffer
         //      -> w/i update do the stuff below
@@ -413,7 +420,6 @@ public class testGUI extends javax.swing.JFrame {
         Buffer tabBuff = new Buffer(buffers.size()+1, "");
         buffers.add(tabBuff);
         currentTab = tabs.getSelectedIndex();
- 
     }//GEN-LAST:event_tabsComponentAdded
 
     private void HeaderMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeaderMenuItemActionPerformed
@@ -427,10 +433,12 @@ public class testGUI extends javax.swing.JFrame {
     private void AutoWordWrapMenuCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoWordWrapMenuCheckBoxActionPerformed
         // TODO add your handling code here:
         if (AutoWordWrapMenuCheckBox.isSelected()){
-            jTextArea1.setLineWrap(true);
+            currentTextArea.setLineWrap(true);
+            //jTextArea1.setWrapStyleWord(true);
         }
         else{
-            jTextArea1.setLineWrap(false);
+            currentTextArea.setLineWrap(false);
+           // jTextArea1.setWrapStyleWord(false);
         }
     }//GEN-LAST:event_AutoWordWrapMenuCheckBoxActionPerformed
 
@@ -440,7 +448,7 @@ public class testGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_tabsComponentRemoved
 
     private void tabsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabsStateChanged
-        // TODO add your handling code here:
+        //set the currentTextArea and currentTab
     }//GEN-LAST:event_tabsStateChanged
 
     private void CopyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CopyMenuItemActionPerformed
@@ -501,6 +509,8 @@ public class testGUI extends javax.swing.JFrame {
 
     private void BoldMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoldMenuItemActionPerformed
         // TODO add your handling code here:
+       // int pos = currentTextArea.getCaretPosition();
+        jTextArea1.insert("<b>\n     \n</b>", jTextArea1.getCaretPosition());
     }//GEN-LAST:event_BoldMenuItemActionPerformed
 
     private void ItalicMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItalicMenuItemActionPerformed
@@ -522,6 +532,10 @@ public class testGUI extends javax.swing.JFrame {
     private void PictureMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PictureMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PictureMenuItemActionPerformed
+
+    private void tabsFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tabsFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabsFocusGained
     /**
      * @param args the command line arguments
      */
